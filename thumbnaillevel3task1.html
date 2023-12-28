@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Image Gallery</title>
+    <style>
+        /* Reset some default styles */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Gallery styles */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .thumbnail {
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        .enlarged-image {
+            display: none;
+        }
+
+        .enlarged-image img {
+            max-width: 100%;
+        }
+
+        /* Show enlarged image when thumbnail is clicked */
+        .enlarged {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="image-gallery">
+        <li class="thumbnail" onclick="showEnlarged('image1.jpg')"><img src="https://img.freepik.com/free-psd/evangelist-religion-spirituality-youtube-cover-template_23-2149571172.jpg?w=1060&t=st=1698074612~exp=1698075212~hmac=52d3f131dbf72027fdb1b4121fb076ad713cfbd700374cf03400cac74dca73ac" alt="Image 1"></li>
+        <li class="thumbnail" onclick="showEnlarged('image2.jpg')"><img src="https://img.freepik.com/free-psd/digital-marketing-agency-corporate-web-banner-template_120329-3104.jpg?w=900&t=st=1698074650~exp=1698075250~hmac=15173b896738612694a570d8ede8488c119cabbc843410fefb7a6d781c56d11c" alt="Image 2"></li>
+        <li class="thumbnail" onclick="showEnlarged('image3.jpg')"><img src="https://img.freepik.com/free-vector/flat-abstract-business-youtube-thumbnail-template_23-2148913303.jpg?w=1060&t=st=1698074689~exp=1698075289~hmac=8e59d88511d7011fc645735f8d57e2d5f57c377e2e546ec543fff7e22d05789b" alt="Image 3"></li>
+        <!-- Add more thumbnails as needed -->
+    </ul>
+
+    <div class="enlarged">
+        <a href="#" class="close-btn" onclick="hideEnlarged()">&times;</a>
+        <div class="enlarged-image">
+            <img src="" id="enlarged-image" alt="Enlarged Image">
+        </div>
+    </div>
+
+    <script>
+        function showEnlarged(imageSrc) {
+            const enlargedImage = document.getElementById("enlarged-image");
+            enlargedImage.src = imageSrc;
+            document.querySelector(".enlarged").style.display = "block";
+        }
+
+        function hideEnlarged() {
+            document.querySelector(".enlarged").style.display = "none";
+        }
+    </script>
+</body>
+</html>

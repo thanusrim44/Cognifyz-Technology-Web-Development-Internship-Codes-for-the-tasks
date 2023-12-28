@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Image Slideshow</title>
+    <style>
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slideshow-container img.active {
+            display: block;
+        }
+
+        .slideshow-container img:not(.active) {
+            display: none;
+        }
+
+        /* Define keyframes for image transitions */
+        @keyframes fade {
+            0% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img class="active" src="https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" alt="Image 1">
+        <img src="http://wonderfulengineering.com/wp-content/uploads/2016/01/nature-wallpapers-8.jpg" alt="Image 2">
+        <img src="https://wallup.net/wp-content/uploads/2016/03/10/318375-nature-landscape-lake-mountain-forest-wildflowers-spring-pine_trees-path-Switzerland-HDR.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.slideshow-container img');
+        let index = 0;
+
+        function nextImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+
+        // Set the interval for automatic image transition (e.g., every 3 seconds)
+        setInterval(nextImage, 3000);
+    </script>
+</body>
+</html>

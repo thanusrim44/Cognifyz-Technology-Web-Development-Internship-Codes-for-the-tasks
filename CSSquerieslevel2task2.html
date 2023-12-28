@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add media queries for responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            img {
+                width: 50%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Responsive Webpage</h1>
+    <p>This is a basic webpage with a heading, a paragraph, and a random image.
+        Taj Mahal is the most amazing Mughal architecture and is a famous tourist destination in the world. The place which has been declared as a world heritage site by UNESCO in 1983 is one of the most admired architectures of India’s heritage. Taj Mahal is located at the bank of river Yamuna in New Delhi. Taj Mahal which has been the center of huge attraction for millions of tourists worldwide is one of the famous architectural masterpieces like Red Fort, Qutub Minar, Jama Masjid and Jantar Mantar in India.
+    </p>
+    <img src="https://i1.wp.com/worldupclose.in/wp-content/uploads/2020/03/taj.jpg" alt="Random Image">
+</body>
+</html>
